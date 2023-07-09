@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://seyv1ekcajao"]
+
+[ext_resource type="Texture2D" uid="uid://doaypnb8u4j8c" path="res://entities/bogroll.png" id="1_nr30i"]
+[ext_resource type="Script" path="res://entities/bogroll.gd" id="1_wq20i"]
+[ext_resource type="Script" path="res://pieces/auto_sprite.gd" id="2_b7bc2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sna1w"]
+radius = 9.0
+height = 28.0
+
+[node name="bogroll" type="CharacterBody2D"]
+collision_mask = 6
+script = ExtResource("1_wq20i")
+gravity = 800
+bump_jump_speed = 150
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_nr30i")
+hframes = 8
+script = ExtResource("2_b7bc2")
+
+[node name="shape" type="CollisionShape2D" parent="."]
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_sna1w")

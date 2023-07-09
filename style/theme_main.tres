@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bpmxyt1ruoaxv"]
+
+[ext_resource type="FontFile" uid="uid://bvv8l3u7aix4m" path="res://style/EQUIPMENTPRO.TTF" id="1_huxrm"]
+
+[resource]
+default_font = ExtResource("1_huxrm")
