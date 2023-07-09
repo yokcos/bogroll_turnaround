@@ -9,7 +9,7 @@ func _ready():
 	History.add_score(Game.time)
 	History.save_history()
 	
-	$list/high.text = "Best time: %s" % floor(History.get_high_score())
+	$list/high.text = "Best time: %s seconds" % floor(History.get_high_score())
 
 
 func enable_lowpass():

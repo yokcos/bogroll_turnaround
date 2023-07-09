@@ -11,4 +11,11 @@ func _on_begin_pressed():
 
 
 func _on_egress_pressed():
-	get_tree().quit()
+	if OS.has_feature("web"):
+		$label_main.show()
+		$label_timer.start()
+	else:
+		get_tree().quit()
+
+func _on_timer_timeout():
+	$label_main.hide()

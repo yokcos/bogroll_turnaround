@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dedjgrqcy5ho2"]
+[gd_scene load_steps=8 format=3 uid="uid://dedjgrqcy5ho2"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_d60it"]
 [ext_resource type="PackedScene" uid="uid://b31xfa1axilrq" path="res://environment/tilemap.tscn" id="1_gdvlo"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6cgl63v7b036" path="res://pieces/bullet_spawner.tscn" id="3_lnsjr"]
 [ext_resource type="PackedScene" uid="uid://w4wcewtntbp" path="res://ui/timer.tscn" id="4_ye7rs"]
 [ext_resource type="AudioStream" uid="uid://75glaryt2qjd" path="res://bogroll turnaround.ogg" id="5_g63rp"]
+[ext_resource type="PackedScene" uid="uid://dhsnsm5o85125" path="res://ui/mute.tscn" id="7_fhxom"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_d60it")
@@ -27,3 +28,9 @@ offset_bottom = 224.0
 stream = ExtResource("5_g63rp")
 autoplay = true
 bus = &"Music"
+
+[node name="mute" parent="." instance=ExtResource("7_fhxom")]
+offset_left = 432.0
+offset_top = 48.0
+offset_right = 464.0
+offset_bottom = 80.0

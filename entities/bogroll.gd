@@ -17,6 +17,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		flip( is_on_floor() )
+	if event.is_action_pressed("ui_left") or event.is_action_pressed("ui_right"):
+		flip( is_on_floor() )
+	if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down"):
+		flip( is_on_floor() )
 
 func _physics_process(delta):
 	gravitate(delta)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhsnsm5o85125"]
+
+[ext_resource type="Texture2D" uid="uid://dxtopy8uars36" path="res://ui/volume_active.png" id="1_7lkxh"]
+[ext_resource type="Script" path="res://ui/mute.gd" id="2_87ya8"]
+
+[node name="mute" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_7lkxh")
+script = ExtResource("2_87ya8")
