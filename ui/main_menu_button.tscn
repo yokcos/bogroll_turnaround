@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d2dtje45qxkuh"]
+
+[node name="main_menu_button" type="Button"]
+custom_minimum_size = Vector2(128, 24)
+offset_right = 128.0
+offset_bottom = 24.0
+rotation = -0.523599
+pivot_offset = Vector2(64, 12)

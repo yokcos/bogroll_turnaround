@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://seyv1ekcajao"]
+[gd_scene load_steps=6 format=3 uid="uid://seyv1ekcajao"]
 
 [ext_resource type="Texture2D" uid="uid://doaypnb8u4j8c" path="res://entities/bogroll.png" id="1_nr30i"]
 [ext_resource type="Script" path="res://entities/bogroll.gd" id="1_wq20i"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sna1w"]
 radius = 9.0
 height = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vat0t"]
+radius = 3.0
 
 [node name="bogroll" type="CharacterBody2D"]
 collision_mask = 6
@@ -22,3 +25,14 @@ script = ExtResource("2_b7bc2")
 [node name="shape" type="CollisionShape2D" parent="."]
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_sna1w")
+
+[node name="bullet_detector" type="Area2D" parent="."]
+position = Vector2(-5, 0)
+collision_layer = 8
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="bullet_detector"]
+shape = SubResource("CircleShape2D_vat0t")
+debug_color = Color(0.701961, 0, 0, 0.419608)
+
+[connection signal="area_entered" from="bullet_detector" to="." method="_on_bullet_detector_area_entered"]

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv6n4b05xmi2d"]
+[gd_scene load_steps=6 format=3 uid="uid://dv6n4b05xmi2d"]
 
+[ext_resource type="Theme" uid="uid://bpmxyt1ruoaxv" path="res://style/theme_main.tres" id="1_iyq3b"]
 [ext_resource type="PackedScene" uid="uid://ymghh7c0bcd6" path="res://ui/label_main.tscn" id="1_jnhp8"]
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="2_cxxbv"]
+[ext_resource type="Script" path="res://ui/buttons_list.gd" id="3_hvo5d"]
+[ext_resource type="PackedScene" uid="uid://d2dtje45qxkuh" path="res://ui/main_menu_button.tscn" id="4_41fy7"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -9,6 +13,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_iyq3b")
+script = ExtResource("2_cxxbv")
 
 [node name="label_main" parent="." instance=ExtResource("1_jnhp8")]
 layout_mode = 1
@@ -19,3 +25,49 @@ offset_right = 0.0
 offset_bottom = 192.0
 grow_horizontal = 2
 text = "[center]Bogroll Turnaround"
+
+[node name="buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("3_hvo5d")
+button_angle = -20.0
+
+[node name="begin" parent="buttons" instance=ExtResource("4_41fy7")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../egress")
+focus_neighbor_top = NodePath("../egress")
+focus_neighbor_right = NodePath("../options")
+focus_neighbor_bottom = NodePath("../options")
+focus_next = NodePath("../options")
+focus_previous = NodePath("../egress")
+text = "Begin"
+
+[node name="options" parent="buttons" instance=ExtResource("4_41fy7")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../begin")
+focus_neighbor_top = NodePath("../begin")
+focus_neighbor_right = NodePath("../egress")
+focus_neighbor_bottom = NodePath("../egress")
+focus_next = NodePath("../egress")
+focus_previous = NodePath("../begin")
+text = "Options"
+
+[node name="egress" parent="buttons" instance=ExtResource("4_41fy7")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../options")
+focus_neighbor_top = NodePath("../options")
+focus_neighbor_right = NodePath("../begin")
+focus_neighbor_bottom = NodePath("../begin")
+focus_next = NodePath("../begin")
+focus_previous = NodePath("../options")
+text = "No more"
+
+[connection signal="pressed" from="buttons/begin" to="." method="_on_begin_pressed"]
+[connection signal="pressed" from="buttons/egress" to="." method="_on_egress_pressed"]

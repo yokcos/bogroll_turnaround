@@ -13,7 +13,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
-		flip()
+		flip( is_on_floor() )
 
 func _physics_process(delta):
 	gravitate(delta)
@@ -26,7 +26,6 @@ func _physics_process(delta):
 		hit_dir *= flip_int
 		if hit_dir < -0.3:
 			flip()
-			velocity.y = -bump_jump_speed
 		
 		if this_hit.get_normal().y < 0.3:
 			velocity.y = min(velocity.y, 0)
@@ -35,10 +34,19 @@ func _physics_process(delta):
 func gravitate(delta: float):
 	velocity.y += gravity*delta
 
-func flip():
+func flip(jump: bool = true):
 	flip_int = -flip_int
 	update_velocity()
+	if jump:
+		velocity.y = -bump_jump_speed
 
 func update_velocity():
 	velocity.x = speed * flip_int
 	$sprite.animation_speed = 10*flip_int
+
+func die():
+	get_tree().change_scene_to_file("res://ui/main_menu.tscn")
+
+
+func _on_bullet_detector_area_entered(area):
+	die()

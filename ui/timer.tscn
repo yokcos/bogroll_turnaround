@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://w4wcewtntbp"]
+
+[ext_resource type="Script" path="res://ui/timer.gd" id="1_0e56t"]
+[ext_resource type="PackedScene" uid="uid://ymghh7c0bcd6" path="res://ui/label_main.tscn" id="2_kkfqh"]
+
+[node name="timer" type="Control"]
+custom_minimum_size = Vector2(192, 64)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 160.0
+offset_bottom = 64.0
+script = ExtResource("1_0e56t")
+prefix = "[shake rate=20.0 level=2 connected=1][center]"
+
+[node name="label" parent="." instance=ExtResource("2_kkfqh")]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -24.0
+offset_right = -96.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "[center]00:00"
