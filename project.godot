@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="*res://singleta/game.gd"
+Events="*res://singleta/events.gd"
 
 [display]
 

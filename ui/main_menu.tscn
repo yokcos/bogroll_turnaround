@@ -55,6 +55,7 @@ focus_previous = NodePath("../egress")
 text = "Begin"
 
 [node name="options" parent="buttons" instance=ExtResource("4_41fy7")]
+visible = false
 layout_mode = 2
 focus_neighbor_left = NodePath("../begin")
 focus_neighbor_top = NodePath("../begin")

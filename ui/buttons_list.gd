@@ -16,7 +16,7 @@ func reposition_children():
 	
 	for i in get_child_count():
 		var this_kid = get_child(i)
-		if this_kid is Control:
+		if this_kid is Control and this_kid.visible:
 			all_kids.append(this_kid)
 	
 	var total_position: float = 0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8cim1c6ad8eq"
+path="res://.godot/imported/the call of nature.ogg-c86be359b3cd55fb6c92d8baf8be5c77.oggvorbisstr"
+
+[deps]
+
+source_file="res://the call of nature.ogg"
+dest_files=["res://.godot/imported/the call of nature.ogg-c86be359b3cd55fb6c92d8baf8be5c77.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

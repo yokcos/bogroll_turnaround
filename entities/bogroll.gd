@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 var flip_int = 1
 
+const obj_loss = preload("res://ui/loss.tscn")
 const tex_bonk = preload("res://fx/bonk.png")
 
 
@@ -49,7 +50,11 @@ func update_velocity():
 	$sprite.animation_speed = 10*flip_int
 
 func die():
-	get_tree().change_scene_to_file("res://ui/main_menu.tscn")
+	var new_loss = obj_loss.instantiate()
+	Game.deploy_instance(new_loss, Vector2())
+	Game.end()
+	Events.death.emit()
+	queue_free()
 
 
 func _on_bullet_detector_area_entered(area):

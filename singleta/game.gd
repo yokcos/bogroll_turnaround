@@ -2,11 +2,25 @@ extends Node
 
 
 var world: Node2D = null
+var in_game: bool = false
+var time: float = 0
 
 const obj_fx = preload("res://fx/fx.tscn")
 
 
-func deploy_instance(what: Node2D, where: Vector2):
+func _process(delta):
+	if in_game:
+		time += delta
+
+
+func start():
+	time = 0
+	in_game = true
+
+func end():
+	in_game = false
+
+func deploy_instance(what: CanvasItem, where: Vector2):
 	if is_instance_valid(world):
 		world.add_child(what)
 		what.position = where

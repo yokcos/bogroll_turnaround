@@ -26,3 +26,4 @@ offset_bottom = 224.0
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_g63rp")
 autoplay = true
+bus = &"Music"
