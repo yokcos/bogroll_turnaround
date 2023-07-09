@@ -38,10 +38,16 @@ func shoot_random():
 
 func shoot_row(interval: float, offset: float, chance: float):
 	var x = offset*interval
+	var i = 0
 	while x < total_width:
 		if randf() < chance:
-			shoot(Vector2(x, 0), Vector2(0, bullet_speed))
+			var altitude = 0
+			if i % 2 == 0:
+				altitude = -64
+			shoot(Vector2(x, altitude), Vector2(0, bullet_speed))
+		
 		x += interval
+		i += 1
 
 func shoot_fan(bullets: int, where: float, spread: float):
 	for i in range(bullets):

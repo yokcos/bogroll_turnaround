@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv6n4b05xmi2d"]
+[gd_scene load_steps=8 format=3 uid="uid://dv6n4b05xmi2d"]
 
 [ext_resource type="Theme" uid="uid://bpmxyt1ruoaxv" path="res://style/theme_main.tres" id="1_iyq3b"]
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="2_cxxbv"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b31xfa1axilrq" path="res://environment/tilemap.tscn" id="3_odk4i"]
 [ext_resource type="PackedScene" uid="uid://d2dtje45qxkuh" path="res://ui/main_menu_button.tscn" id="4_41fy7"]
 [ext_resource type="Texture2D" uid="uid://db122k2vjrcai" path="res://ui/title.png" id="4_ey2g0"]
+[ext_resource type="AudioStream" uid="uid://8cim1c6ad8eq" path="res://the call of nature.ogg" id="7_mu5s6"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -48,9 +49,9 @@ button_angle = -20.0
 layout_mode = 2
 focus_neighbor_left = NodePath("../egress")
 focus_neighbor_top = NodePath("../egress")
-focus_neighbor_right = NodePath("../options")
-focus_neighbor_bottom = NodePath("../options")
-focus_next = NodePath("../options")
+focus_neighbor_right = NodePath("../egress")
+focus_neighbor_bottom = NodePath("../egress")
+focus_next = NodePath("../egress")
 focus_previous = NodePath("../egress")
 text = "Begin"
 
@@ -67,13 +68,18 @@ text = "Options"
 
 [node name="egress" parent="buttons" instance=ExtResource("4_41fy7")]
 layout_mode = 2
-focus_neighbor_left = NodePath("../options")
-focus_neighbor_top = NodePath("../options")
+focus_neighbor_left = NodePath("../begin")
+focus_neighbor_top = NodePath("../begin")
 focus_neighbor_right = NodePath("../begin")
 focus_neighbor_bottom = NodePath("../begin")
 focus_next = NodePath("../begin")
-focus_previous = NodePath("../options")
+focus_previous = NodePath("../begin")
 text = "No more"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_mu5s6")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="buttons/begin" to="." method="_on_begin_pressed"]
 [connection signal="pressed" from="buttons/egress" to="." method="_on_egress_pressed"]

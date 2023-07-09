@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Game="*res://singleta/game.gd"
 Events="*res://singleta/events.gd"
+History="*res://singleta/history.gd"
 
 [display]
 

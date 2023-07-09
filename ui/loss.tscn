@@ -46,7 +46,7 @@ offset_right = -32.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 32
+theme_override_constants/separation = 16
 alignment = 1
 
 [node name="as_ever" type="Label" parent="list"]
@@ -66,6 +66,13 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(0.737255, 0.290196, 0.607843, 1)
 text = "Survival for %s seconds"
+label_settings = SubResource("LabelSettings_51l3k")
+horizontal_alignment = 1
+
+[node name="high" type="Label" parent="list"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737255, 0.290196, 0.607843, 1)
+text = "Best score: %s"
 label_settings = SubResource("LabelSettings_51l3k")
 horizontal_alignment = 1
 
