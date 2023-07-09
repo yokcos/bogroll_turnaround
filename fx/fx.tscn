@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bljf0ve1wl1oe"]
+
+[ext_resource type="Script" path="res://pieces/auto_sprite.gd" id="1_cekag"]
+
+[node name="fx" type="Sprite2D"]
+script = ExtResource("1_cekag")
+loops = 1

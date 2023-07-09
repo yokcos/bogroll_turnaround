@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 var flip_int = 1
 
+const tex_bonk = preload("res://fx/bonk.png")
+
 
 func _ready():
 	update_velocity()
@@ -25,6 +27,8 @@ func _physics_process(delta):
 		var hit_dir: float = this_hit.get_normal().x
 		hit_dir *= flip_int
 		if hit_dir < -0.3:
+			var new_fx = Game.deploy_fx(tex_bonk, this_hit.get_position() + Vector2(0, -12), 2)
+			new_fx.loops = 4
 			flip()
 		
 		if this_hit.get_normal().y < 0.3:

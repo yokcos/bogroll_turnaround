@@ -1,6 +1,54 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bpmxyt1ruoaxv"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bpmxyt1ruoaxv"]
 
 [ext_resource type="FontFile" uid="uid://c3vo3ga5wa6am" path="res://style/RALEWAY-SEMIBOLD.TTF" id="1_m0b1i"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avohq"]
+bg_color = Color(0.25098, 0.2, 0.32549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58id3"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.835294, 0.254902, 1)
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0q7g"]
+bg_color = Color(0.737255, 0.290196, 0.607843, 1)
+border_width_left = 4
+border_width_top = 1
+border_width_right = 4
+border_width_bottom = 1
+border_color = Color(1, 0.835294, 0.254902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0jmb"]
+bg_color = Color(0.737255, 0.290196, 0.607843, 1)
+border_width_left = 4
+border_width_top = 1
+border_width_right = 4
+border_width_bottom = 1
+border_color = Color(0.705882, 0.12549, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1wna"]
+bg_color = Color(0.25098, 0.2, 0.32549, 1)
+border_width_left = 4
+border_width_top = 1
+border_width_right = 4
+border_width_bottom = 1
+border_color = Color(0.737255, 0.290196, 0.607843, 1)
+
 [resource]
 default_font = ExtResource("1_m0b1i")
+Button/colors/font_color = Color(1, 0.835294, 0.254902, 1)
+Button/colors/font_disabled_color = Color(0.705882, 0.12549, 0.164706, 1)
+Button/colors/font_focus_color = Color(1, 0.835294, 0.254902, 1)
+Button/colors/font_hover_color = Color(0.25098, 0.2, 0.32549, 1)
+Button/colors/font_hover_pressed_color = Color(0.737255, 0.290196, 0.607843, 1)
+Button/colors/font_outline_color = Color(0.25098, 0.2, 0.32549, 1)
+Button/colors/font_pressed_color = Color(0.737255, 0.290196, 0.607843, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_avohq")
+Button/styles/focus = SubResource("StyleBoxFlat_58id3")
+Button/styles/hover = SubResource("StyleBoxFlat_s0q7g")
+Button/styles/normal = SubResource("StyleBoxFlat_v0jmb")
+Button/styles/pressed = SubResource("StyleBoxFlat_w1wna")

@@ -12,6 +12,7 @@ func _ready():
 	add_child(timer)
 	timer.start(.1)
 	timer.timeout.connect(advance_colour)
+	advance_colour()
 
 
 func advance_colour():
